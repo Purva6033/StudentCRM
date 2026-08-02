@@ -9,21 +9,30 @@ public class StudentProfileResponse {
     private String status;
     private String counselor;
 
+    private String phone;
+    private String address;
+
     public StudentProfileResponse() {
     }
 
-    public StudentProfileResponse(String studentName,
-                                  String studentCode,
-                                  String course,
-                                  String admissionDate,
-                                  String status,
-                                  String counselor) {
+    public StudentProfileResponse(
+            String studentName,
+            String studentCode,
+            String course,
+            String admissionDate,
+            String status,
+            String counselor,
+            String phone,
+            String address) {
+
         this.studentName = studentName;
         this.studentCode = studentCode;
         this.course = course;
         this.admissionDate = admissionDate;
         this.status = status;
         this.counselor = counselor;
+        this.phone = phone;
+        this.address = address;
     }
 
     public String getStudentName() {
@@ -72,5 +81,21 @@ public class StudentProfileResponse {
 
     public void setCounselor(String counselor) {
         this.counselor = counselor;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

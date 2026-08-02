@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.purva.studentcrm.dto.StudentProfileResponse;
+import com.purva.studentcrm.dto.StudentProfileUpdateRequest;
 import com.purva.studentcrm.dto.StudentRequest;
 import com.purva.studentcrm.entity.Admission;
 import com.purva.studentcrm.entity.Student;
@@ -25,42 +26,64 @@ public class StudentController {
     @Autowired
     private StudentService service;
 
-    // Save Student
+    // ===================== Save Student =====================
+
     @PostMapping("/save")
-    public ResponseEntity<Student> saveStudent(@Valid @RequestBody StudentRequest request) {
+    public ResponseEntity<Student> saveStudent(
+            @Valid @RequestBody StudentRequest request) {
 
         Student savedStudent = service.saveStudent(request);
+
         return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
     }
 
-    // Get Student Profile
+    // ===================== Student Profile =====================
+
     @GetMapping("/profile")
     public ResponseEntity<StudentProfileResponse> getProfile(
             @RequestParam String email) {
 
         return ResponseEntity.ok(service.getProfile(email));
     }
-    
-   
-    // Available Admissions
+
+    // ===================== Update Student Profile =====================
+
+    @PutMapping("/profile/update")
+    public ResponseEntity<String> updateProfile(
+            @RequestBody StudentProfileUpdateRequest request) {
+
+        service.updateProfile(request);
+
+        return ResponseEntity.ok("Profile Updated Successfully");
+    }
+
+    // ===================== Available Admissions =====================
+
     @GetMapping("/available")
     public ResponseEntity<List<Admission>> getAvailableAdmissions() {
+
         return ResponseEntity.ok(service.getAvailableAdmissions());
     }
 
-    // Get All Students
+    // ===================== Get All Students =====================
+
     @GetMapping("/all")
     public ResponseEntity<List<Student>> getAllStudents() {
+
         return ResponseEntity.ok(service.getAllStudents());
     }
 
-    // Get Student By ID
+    // ===================== Get Student By ID =====================
+
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable Integer id) {
+    public ResponseEntity<Student> getStudentById(
+            @PathVariable Integer id) {
+
         return ResponseEntity.ok(service.getStudentById(id));
     }
 
-    // Update Student
+    // ===================== Update Student (Admin) =====================
+
     @PutMapping("/update/{id}")
     public ResponseEntity<Student> updateStudent(
             @PathVariable Integer id,
@@ -69,14 +92,17 @@ public class StudentController {
         return ResponseEntity.ok(service.updateStudent(id, request));
     }
 
-    // Delete Student
+    // ===================== Delete Student =====================
+
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable Integer id) {
+    public ResponseEntity<String> deleteStudent(
+            @PathVariable Integer id) {
 
         return ResponseEntity.ok(service.deleteStudent(id));
     }
 
-    // Search Students
+    // ===================== Search Students =====================
+
     @GetMapping("/search")
     public ResponseEntity<List<Student>> searchStudents(
             @RequestParam String keyword) {
@@ -84,9 +110,11 @@ public class StudentController {
         return ResponseEntity.ok(service.searchStudents(keyword));
     }
 
-    // Pagination
+    // ===================== Pagination =====================
+
     @GetMapping("/page")
-    public ResponseEntity<Page<Student>> getAllStudents(Pageable pageable) {
+    public ResponseEntity<Page<Student>> getAllStudents(
+            Pageable pageable) {
 
         return ResponseEntity.ok(service.getStudents(pageable));
     }
