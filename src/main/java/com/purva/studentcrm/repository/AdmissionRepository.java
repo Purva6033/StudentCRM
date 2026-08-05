@@ -6,19 +6,20 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import com.purva.studentcrm.dto.CounselorPerformanceDTO;
 import com.purva.studentcrm.entity.Admission;
 import com.purva.studentcrm.entity.Student;
 import com.purva.studentcrm.enums.AdmissionStatus;
 
 public interface AdmissionRepository extends JpaRepository<Admission, Integer> {
 
-    // Search by exact enum status
+    // Search by Status
     List<Admission> findByStatus(AdmissionStatus status);
 
-    // Find admission by student
+    // Find Admission by Student
     Optional<Admission> findByStudent(Student student);
 
-    // Approved admissions not yet assigned to a student
+    // Approved Admissions
     @Query("""
             SELECT a
             FROM Admission a
@@ -31,11 +32,39 @@ public interface AdmissionRepository extends JpaRepository<Admission, Integer> {
             """)
     List<Admission> getAvailableAdmissions();
 
-    // Recent admissions
+    // Recent Admissions
     @Query("""
             SELECT a
             FROM Admission a
             ORDER BY a.admissionDate DESC
             """)
     List<Admission> getRecentAdmissions();
+
+    // Counselor Performance
+    @Query("""
+            SELECT new com.purva.studentcrm.dto.CounselorPerformanceDTO(
+                a.counselor.fullName,
+                COUNT(a)
+            )
+            FROM Admission a
+            GROUP BY a.counselor.fullName
+            ORDER BY COUNT(a) DESC
+            """)
+    List<CounselorPerformanceDTO> getCounselorPerformance();
+
+    // Monthly Admissions
+    @Query(value = """
+            SELECT
+                DATE_FORMAT(admission_date,'%b') AS month,
+                COUNT(*) AS total
+            FROM admissions
+            GROUP BY MONTH(admission_date),
+                     DATE_FORMAT(admission_date,'%b')
+            ORDER BY MONTH(admission_date)
+            """, nativeQuery = true)
+    List<Object[]> getMonthlyAdmissions();
+
+    // Count by Counselor
+    long countByCounselorUserId(Integer userId);
+
 }

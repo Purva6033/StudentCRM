@@ -3,11 +3,12 @@ package com.purva.studentcrm.service;
 import java.util.ArrayList;
 
 import java.util.List;
-
+import com.purva.studentcrm.dto.CounselorPerformanceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.purva.studentcrm.dto.CourseReportDTO;
 import com.purva.studentcrm.dto.DashboardResponse;
+import com.purva.studentcrm.dto.LeadStatusReportDTO;
 import com.purva.studentcrm.dto.RecentAdmissionDTO;
 import com.purva.studentcrm.entity.Student;
 import com.purva.studentcrm.repository.AdmissionRepository;
@@ -16,7 +17,8 @@ import com.purva.studentcrm.repository.FollowUpRepository;
 import com.purva.studentcrm.repository.LeadRepository;
 import com.purva.studentcrm.repository.StudentRepository;
 import com.purva.studentcrm.repository.UserRepository;
-
+import java.time.LocalDate;
+import com.purva.studentcrm.dto.MonthlyAdmissionDTO;
 @Service
 public class DashboardService {
 
@@ -48,6 +50,16 @@ public class DashboardService {
         dashboard.setTotalCourses(courseRepository.count());
         dashboard.setTotalCounselors(userRepository.count());
         dashboard.setTotalFollowUps(followUpRepository.count());
+        dashboard.setTodayFollowUps(
+                followUpRepository.countByFollowUpDate(LocalDate.now())
+        );
+
+        dashboard.setOverdueFollowUps(
+                followUpRepository.countByFollowUpDateBeforeAndStatus(
+                        LocalDate.now(),
+                        "Pending"
+                )
+        );
 
         
         return dashboard;
@@ -75,5 +87,44 @@ public class DashboardService {
         return list;
     }
 
+    public List<LeadStatusReportDTO> getLeadStatusReport() {
+
+        return leadRepository.getLeadStatusReport();
+
+    }
+    public List<CourseReportDTO> getCourseReport() {
+
+        return courseRepository.getCourseReport();
+
+    }
+    public List<CounselorPerformanceDTO> getCounselorPerformance() {
+        return admissionRepository.getCounselorPerformance();
+    }
+    
+    public List<MonthlyAdmissionDTO> getMonthlyAdmissions() {
+
+        List<Object[]> rows = admissionRepository.getMonthlyAdmissions();
+
+        List<MonthlyAdmissionDTO> list = new ArrayList<>();
+
+        for (Object[] row : rows) {
+
+            list.add(
+
+                new MonthlyAdmissionDTO(
+
+                    row[0].toString(),
+
+                    ((Number) row[1]).longValue()
+
+                )
+
+            );
+
+        }
+
+        return list;
+
+    }
       
 }

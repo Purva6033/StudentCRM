@@ -36,6 +36,18 @@ public class User {
 
     @Column(name = "is_active")
     private Boolean isActive;
+    
+    @Column(name = "approval_status")
+    private String approvalStatus;
+    
+    public String getApprovalStatus() {
+        return approvalStatus;
+    }
+
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+    
     @JsonIgnore
     @OneToMany(mappedBy = "counselor")
     private List<Admission> admissions;
@@ -126,6 +138,8 @@ public class User {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+        
+        
     }
     
 }

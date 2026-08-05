@@ -8,7 +8,8 @@ public class DashboardResponse {
     private long totalCourses;
     private long totalCounselors;
     private long totalFollowUps;
-
+    private long todayFollowUps;
+    private long overdueFollowUps;
     public DashboardResponse() {
     }
 
@@ -58,5 +59,20 @@ public class DashboardResponse {
 
     public void setTotalFollowUps(long totalFollowUps) {
         this.totalFollowUps = totalFollowUps;
+    }
+    public long getTodayFollowUps() {
+        return todayFollowUps;
+    }
+
+    public void setTodayFollowUps(long todayFollowUps) {
+        this.todayFollowUps = todayFollowUps;
+    }
+
+    public long getOverdueFollowUps() {
+        return overdueFollowUps;
+    }
+
+    public void setOverdueFollowUps(long overdueFollowUps) {
+        this.overdueFollowUps = overdueFollowUps;
     }
 }

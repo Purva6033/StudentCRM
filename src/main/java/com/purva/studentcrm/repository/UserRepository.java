@@ -11,7 +11,8 @@ import com.purva.studentcrm.enums.Role;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     Optional<User> findByEmail(String email);
+    boolean existsByUsername(String username);
 
     List<User> findByRole(Role role);
-
+    List<User> findByApprovalStatus(String approvalStatus);
 }
