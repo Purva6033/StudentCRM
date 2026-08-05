@@ -42,7 +42,8 @@ public class SecurityConfig {
 
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "http://192.168.0.106:5173"
+                "http://192.168.0.106:5173",
+                "https://studentcrm-frontend.onrender.com"
         ));
 
         configuration.setAllowedMethods(List.of(
