@@ -1,240 +1,262 @@
-# 🎓 Student Admission CRM System
+<div align="center">
 
-A full-stack **Student Admission CRM (Customer Relationship Management) System** developed using **Spring Boot**, **React**, **MySQL**, and **JWT Authentication**. The application streamlines the student admission process by managing inquiries, leads, admissions, counselors, follow-ups, reports, and user authentication through a secure role-based system.
+# 🎓 Student CRM
+
+### Student Admission Management System
+
+A modern **Full Stack Student Admission Management System** built using **Spring Boot**, **React**, **MySQL**, and deployed on **Render** with **Aiven Cloud Database**.
+
+<p align="center">
+
+<a href="https://studentcrm-frontend.onrender.com">
+<img src="https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-blue?style=for-the-badge"/>
+</a>
+
+<a href="https://studentcrm-backend.onrender.com">
+<img src="https://img.shields.io/badge/REST_API-Live-success?style=for-the-badge"/>
+</a>
+
+</p>
+
+<img src="https://img.shields.io/github/stars/Purva6033/StudentCRM?style=for-the-badge"/>
+<img src="https://img.shields.io/github/forks/Purva6033/StudentCRM?style=for-the-badge"/>
+<img src="https://img.shields.io/github/issues/Purva6033/StudentCRM?style=for-the-badge"/>
+<img src="https://img.shields.io/github/license/Purva6033/StudentCRM?style=for-the-badge"/>
+
+</div>
 
 ---
 
-## 🚀 Features
+# 🌐 Live Demo
 
-### 🔐 Authentication & Security
-- JWT Authentication
-- Secure Login & Registration
-- Role-Based Access Control (Admin, Counselor, Student)
-- Password Change & Reset
-- Protected Routes
+## 🚀 Frontend
 
-### 👨‍🎓 Student Management
+### 🔗 https://studentcrm-frontend.onrender.com
+
+---
+
+## ⚙ Backend API
+
+### 🔗 https://studentcrm-backend.onrender.com
+
+---
+
+# 📖 About The Project
+
+Student CRM is a cloud-based Student Admission Management System developed to simplify the complete admission workflow of an educational institute.
+
+The system helps administrators and counselors manage:
+
+- Student Records
+- Admissions
+- Leads
+- Follow Ups
+- Courses
+- Reports
+- Activity Logs
+- Dashboards
+
+The project follows a modern Full Stack Architecture using React, Spring Boot, REST APIs and Cloud MySQL.
+
+---
+
+# ✨ Features
+
+## 👨‍🎓 Student Module
+
 - Add Student
 - Update Student
 - Delete Student
-- View Student Details
-- Student Dashboard
-- Student Profile Management
-
-### 📋 Lead Management
-- Add New Leads
-- Update Lead Information
-- Delete Leads
-- Lead Status Tracking
-- Import Leads using CSV
-
-### 🎯 Admission Management
-- Student Admission Processing
-- Admission Status Tracking
-- Admission Reports
-
-### 📚 Course Management
-- Add Courses
-- Update Course Details
-- Delete Courses
-- View Available Courses
-
-### 📞 Follow-Up Management
-- Schedule Follow-Ups
-- Update Follow-Up Status
-- Track Pending Follow-Ups
-
-### ☎️ Call Record Management
-- Record Student Calls
-- Maintain Call History
-- Call Status Tracking
-
-### 📊 Dashboard & Analytics
-- Admin Dashboard
-- Counselor Dashboard
-- Student Dashboard
-- Monthly Admission Statistics
-- Lead Status Reports
-- Course-wise Reports
-- Counselor Performance Analysis
-
-### 📝 Activity Logs
-- Track User Activities
-- System Activity History
-- Audit Logs
-
-### 📈 Reports
-- Monthly Admission Report
-- Lead Status Report
-- Course Performance Report
-- Counselor Performance Report
+- Search Student
+- Student Profile
 
 ---
 
-# 🛠️ Technology Stack
+## 🎯 Lead Module
 
-## Backend
+- Add Lead
+- Manage Leads
+- Lead Status Tracking
 
-- Java 21
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- Hibernate
-- Maven
-- JWT Authentication
-- REST APIs
+---
 
-## Frontend
+## 📚 Course Module
 
-- React
-- Vite
-- Axios
-- React Router
-- CSS3
-- JavaScript (ES6)
+- Add Course
+- Update Course
+- Delete Course
 
-## Database
+---
 
-- MySQL
+## 📝 Admission Module
 
-## Tools & Technologies
+- Student Admissions
+- Admission Tracking
 
-- Git
-- GitHub
-- Eclipse IDE
-- VS Code
-- Postman
-- Maven
+---
+
+## 👨‍🏫 Counselor Module
+
+- Counselor Dashboard
+- Student Assignment
+
+---
+
+## 📞 Follow Up Module
+
+- Schedule Follow Ups
+- Call Records
+
+---
+
+## 📊 Reports
+
+- Dashboard Statistics
+- Reports & Analytics
+- Activity Logs
+
+---
+
+# 🛠 Tech Stack
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=java,spring,react,vite,mysql,bootstrap,git,github,docker,postman" />
+
+</p>
+
+| Technology | Purpose |
+|------------|----------|
+| Java 21 | Backend Development |
+| Spring Boot | REST APIs |
+| Spring Security | Security |
+| Spring Data JPA | ORM |
+| React | Frontend |
+| Vite | React Build Tool |
+| Bootstrap | UI Design |
+| Axios | API Communication |
+| MySQL | Database |
+| Aiven Cloud | Cloud Database |
+| Render | Deployment |
+| Git & GitHub | Version Control |
+
+---
+
+# 🏗 System Architecture
+
+```text
+                React Frontend
+                      │
+                      │ REST APIs
+                      ▼
+            Spring Boot Backend
+                      │
+        Spring Security + JPA
+                      │
+                      ▼
+          Aiven Cloud MySQL Database
+```
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 StudentCRM
 │
+├── Screenshots
+│
 ├── student-crm-backend
-│   ├── src
-│   ├── pom.xml
-│   └── ...
+│      ├── config
+│      ├── controller
+│      ├── dto
+│      ├── entity
+│      ├── enums
+│      ├── repository
+│      ├── security
+│      ├── service
+│      └── resources
 │
 ├── student-crm-frontend
-│   ├── src
-│   ├── public
-│   ├── package.json
-│   └── ...
+│      ├── components
+│      ├── pages
+│      ├── services
+│      ├── api
+│      ├── assets
+│      └── layouts
 │
 └── README.md
 ```
 
 ---
 
-# 🗄️ Database Modules
+# 📸 Application Screenshots
 
-- Users
-- Students
-- Leads
-- Admissions
-- Courses
-- Follow-Ups
-- Call Records
-- Activity Logs
+## 🔐 Login Page
+
+<p align="center">
+<img src="Screenshots/login-page.png" width="900"/>
+</p>
 
 ---
 
-# 👥 User Roles
+## 📊 Admin Dashboard
 
-## 👨‍💼 Admin
-
-- Manage Users
-- Manage Students
-- Manage Courses
-- Manage Leads
-- View Reports
-- Dashboard Analytics
-- Monitor Activity Logs
+<p align="center">
+<img src="Screenshots/admin-dashboard.png" width="900"/>
+</p>
 
 ---
 
-## 👩‍🏫 Counselor
+## 👨‍🎓 Student Dashboard
 
-- Manage Assigned Leads
-- Schedule Follow-Ups
-- Record Calls
-- View Dashboard
-- Manage Admissions
+<p align="center">
+<img src="Screenshots/student-dashboard.png" width="900"/>
+</p>
 
 ---
 
-## 👨‍🎓 Student
+## 👨‍🏫 Counselor Dashboard
 
-- Login
-- View Dashboard
-- Edit Profile
-- Change Password
-- View Admission Details
+<p align="center">
+<img src="Screenshots/counselor-dashboard.png" width="900"/>
+</p>
 
 ---
 
-# 🔑 Authentication
+## 🎯 Lead Management
 
-The application uses **JWT (JSON Web Token)** for secure authentication and authorization.
-
-Features include:
-
-- Secure Login
-- Token-based Authentication
-- Protected APIs
-- Role-based Authorization
+<p align="center">
+<img src="Screenshots/lead-management.png" width="900"/>
+</p>
 
 ---
 
-# 📊 Dashboard Features
+## 📈 Reports & Analytics
 
-### Admin Dashboard
-
-- Total Students
-- Total Leads
-- Total Admissions
-- Total Courses
-- Monthly Admission Chart
-- Lead Status Chart
-- Counselor Performance
-
-### Counselor Dashboard
-
-- Assigned Leads
-- Today's Follow-Ups
-- Pending Calls
-- Admissions Completed
-- Performance Statistics
-
-### Student Dashboard
-
-- Profile Information
-- Admission Status
-- Course Details
+<p align="center">
+<img src="Screenshots/report-analytics.png" width="900"/>
+</p>
 
 ---
 
-# 🔗 REST APIs
+# 📡 REST APIs
 
-Some major API modules:
-
-- Authentication APIs
-- User APIs
-- Student APIs
-- Lead APIs
-- Course APIs
-- Admission APIs
-- Follow-Up APIs
-- Call Record APIs
-- Dashboard APIs
-- Report APIs
+| Method | Endpoint |
+|---------|-----------|
+| POST | /auth/login |
+| POST | /student/save |
+| GET | /student/all |
+| GET | /student/{id} |
+| PUT | /student/update/{id} |
+| DELETE | /student/delete/{id} |
+| GET | /course/all |
+| POST | /lead/save |
+| GET | /dashboard |
 
 ---
 
-# ⚙️ Installation
+# ⚙ Installation
 
 ## Clone Repository
 
@@ -244,127 +266,84 @@ git clone https://github.com/Purva6033/StudentCRM.git
 
 ---
 
-## Backend Setup
+## Backend
 
 ```bash
 cd student-crm-backend
-```
 
-Update the database configuration in:
+mvn clean install
 
-```
-src/main/resources/application.properties
-```
-
-Run the project:
-
-```bash
 mvn spring-boot:run
 ```
 
 ---
 
-## Frontend Setup
+## Frontend
 
 ```bash
 cd student-crm-frontend
-```
 
-Install dependencies:
-
-```bash
 npm install
-```
 
-Run React application:
-
-```bash
 npm run dev
 ```
 
 ---
 
-# 💾 Database Configuration
+# ☁ Deployment
 
-Example:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/student_crm
-spring.datasource.username=root
-spring.datasource.password=YOUR_PASSWORD
-
-spring.jpa.hibernate.ddl-auto=update
-```
+| Component | Platform |
+|------------|----------|
+| Frontend | Render |
+| Backend | Render |
+| Database | Aiven Cloud |
 
 ---
 
-# 📸 Screenshots
+# 🔐 Security
 
-> Add screenshots of:
-
-- Login Page
-- Dashboard
-- Student Management
-- Lead Management
-- Admission Module
-- Reports
-- Counselor Dashboard
+- Spring Security
+- BCrypt Password Encryption
+- CORS Configuration
+- REST APIs
+- Password Hashing
 
 ---
 
-# 🌟 Future Enhancements
+# 🚀 Future Enhancements
 
-- Email Notifications
-- SMS Notifications
-- Document Upload
-- Payment Integration
-- Attendance Module
-- Mobile Application
-- AI-based Lead Prediction
-- Export Reports (PDF/Excel)
-- Multi-language Support
-
----
-
-# 📚 Learning Outcomes
-
-This project helped in understanding:
-
-- Spring Boot Development
-- REST API Design
 - JWT Authentication
-- React Frontend Development
-- Axios Integration
-- MySQL Database Design
-- CRUD Operations
-- Role-Based Authorization
-- Dashboard Development
-- Git & GitHub Workflow
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-Feel free to fork the repository, raise issues, or submit pull requests.
+- Role Based Authorization
+- Email Notifications
+- Document Upload
+- Redis Caching
+- Docker Compose
+- GitHub Actions CI/CD
+- AWS Deployment
+- Unit & Integration Testing
 
 ---
 
 # 👩‍💻 Developer
 
-**Purva Pawar**
+## Purva Pawar
 
-B.Tech Computer Science Engineering
+**B.Tech Computer Science Engineering**
 
-GitHub: https://github.com/Purva6033
+### 🌐 GitHub
 
-LinkedIn: *(Add your LinkedIn profile here)*
+https://github.com/Purva6033
+
+### 💼 LinkedIn
+
+_Add your LinkedIn profile link_
 
 ---
 
-# ⭐ Support
+<div align="center">
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
+## ⭐ If you like this project, please consider giving it a Star ⭐
 
-It motivates and encourages further development.
+Made with ❤️ by **Purva Pawar**
+
+</div>
