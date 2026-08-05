@@ -3,6 +3,7 @@ package com.purva.studentcrm.entity;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.purva.studentcrm.enums.StudentStatus;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -19,6 +20,9 @@ public class Student {
 
     private String studentCode;
 
+    @Enumerated(EnumType.STRING)
+    private StudentStatus status;
+
     @NotBlank(message = "Student name cannot be empty")
     private String studentName;
 
@@ -27,6 +31,7 @@ public class Student {
 
     @Pattern(regexp = "\\d{10}", message = "Phone must contain 10 digits")
     private String phone;
+
     private LocalDate dateOfBirth;
 
     private String gender;
@@ -46,91 +51,10 @@ public class Student {
     private String preferredCourse;
 
     private String mode;
-    public LocalDate getDateOfBirth() {
-		return dateOfBirth;
-	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getPinCode() {
-		return pinCode;
-	}
-
-	public void setPinCode(String pinCode) {
-		this.pinCode = pinCode;
-	}
-
-	public String getQualification() {
-		return qualification;
-	}
-
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
-	}
-
-	public Integer getPassingYear() {
-		return passingYear;
-	}
-
-	public void setPassingYear(Integer passingYear) {
-		this.passingYear = passingYear;
-	}
-
-	public Double getPercentage() {
-		return percentage;
-	}
-
-	public void setPercentage(Double percentage) {
-		this.percentage = percentage;
-	}
-
-	public String getPreferredCourse() {
-		return preferredCourse;
-	}
-
-	public void setPreferredCourse(String preferredCourse) {
-		this.preferredCourse = preferredCourse;
-	}
-
-	public String getMode() {
-		return mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
-	}
-
-	private String address;
+    private String address;
 
     private LocalDate admissionDate;
-
-    private String status;
 
     @OneToOne
     @JoinColumn(name = "admission_id")
@@ -160,6 +84,14 @@ public class Student {
         this.studentCode = studentCode;
     }
 
+    public StudentStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(StudentStatus status) {
+        this.status = status;
+    }
+
     public String getStudentName() {
         return studentName;
     }
@@ -184,6 +116,86 @@ public class Student {
         this.phone = phone;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    public Integer getPassingYear() {
+        return passingYear;
+    }
+
+    public void setPassingYear(Integer passingYear) {
+        this.passingYear = passingYear;
+    }
+
+    public Double getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(Double percentage) {
+        this.percentage = percentage;
+    }
+
+    public String getPreferredCourse() {
+        return preferredCourse;
+    }
+
+    public void setPreferredCourse(String preferredCourse) {
+        this.preferredCourse = preferredCourse;
+    }
+
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -198,14 +210,6 @@ public class Student {
 
     public void setAdmissionDate(LocalDate admissionDate) {
         this.admissionDate = admissionDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Admission getAdmission() {
