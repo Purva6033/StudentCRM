@@ -340,8 +340,6 @@ https://github.com/Purva6033
 
 ### 💼 LinkedIn
 
-_Add your LinkedIn profile link_
-
 https://www.linkedin.com/in/purva-pawar18/
 
 <div align="center">
