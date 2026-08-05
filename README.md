@@ -25,7 +25,7 @@ A modern **Full Stack Student Admission Management System** built using **Spring
 <img src="https://img.shields.io/github/stars/Purva6033/StudentCRM?style=for-the-badge"/>
 <img src="https://img.shields.io/github/forks/Purva6033/StudentCRM?style=for-the-badge"/>
 <img src="https://img.shields.io/github/issues/Purva6033/StudentCRM?style=for-the-badge"/>
-<img src="https://img.shields.io/github/license/Purva6033/StudentCRM?style=for-the-badge"/>
+
 
 </div>
 
