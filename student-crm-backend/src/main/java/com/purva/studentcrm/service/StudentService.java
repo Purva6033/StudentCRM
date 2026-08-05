@@ -13,6 +13,7 @@ import com.purva.studentcrm.dto.StudentRequest;
 import com.purva.studentcrm.entity.Admission;
 import com.purva.studentcrm.entity.Course;
 import com.purva.studentcrm.entity.Student;
+import com.purva.studentcrm.enums.StudentStatus;
 import com.purva.studentcrm.exception.ResourceNotFoundException;
 import com.purva.studentcrm.exception.StudentNotFoundException;
 import com.purva.studentcrm.repository.AdmissionRepository;
@@ -31,7 +32,7 @@ public class StudentService {
     @Autowired
     private CourseRepository courseRepository;
 
- // ===================== Student Profile =====================
+    // ===================== Student Profile =====================
 
     public StudentProfileResponse getProfile(String email) {
 
@@ -55,7 +56,9 @@ public class StudentService {
                         ? student.getAdmissionDate().toString()
                         : "",
 
-                student.getStatus(),
+                        student.getStatus() != null
+                        ? student.getStatus().name()
+                        : "",
 
                 admission != null && admission.getCounselor() != null
                         ? admission.getCounselor().getFullName()
@@ -80,6 +83,7 @@ public class StudentService {
 
         repository.save(student);
     }
+
     // ===================== Search Student =====================
 
     public List<Student> searchStudents(String keyword) {
@@ -108,8 +112,7 @@ public class StudentService {
         student.setEmail(request.getEmail());
         student.setPhone(request.getPhone());
         student.setAddress(request.getAddress());
-        student.setStatus(request.getStatus());
-
+        student.setStatus(StudentStatus.valueOf(request.getStatus().toUpperCase()));
         student.setCourse(course);
 
         Student savedStudent = repository.save(student);
@@ -153,7 +156,7 @@ public class StudentService {
         student.setEmail(request.getEmail());
         student.setPhone(request.getPhone());
         student.setAddress(request.getAddress());
-        student.setStatus(request.getStatus());
+        student.setStatus(StudentStatus.valueOf(request.getStatus().toUpperCase()));
         student.setCourse(course);
 
         return repository.save(student);
@@ -186,5 +189,4 @@ public class StudentService {
 
         return admissionRepository.getAvailableAdmissions();
     }
-
 }

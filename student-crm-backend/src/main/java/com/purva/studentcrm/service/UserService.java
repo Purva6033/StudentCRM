@@ -2,6 +2,7 @@ package com.purva.studentcrm.service;
 
 import java.time.LocalDate;
 
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ import com.purva.studentcrm.repository.StudentRepository;
 import com.purva.studentcrm.repository.UserRepository;
 import com.purva.studentcrm.security.JwtUtil;
 import com.purva.studentcrm.dto.ChangePasswordRequest;
-
+import com.purva.studentcrm.enums.StudentStatus;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -101,7 +102,7 @@ private final Map<String, OtpData> otpStorage = new HashMap<>();
         student.setMode(request.getMode());
         student.setAdmissionDate(LocalDate.now());
         student.setStudentCode("STU" + (1000 + repository.count()));
-        student.setStatus("Registered");
+        student.setStatus(StudentStatus.ACTIVE);
 
         studentRepository.save(student);
 

@@ -91,7 +91,6 @@ public class Student {
     public void setStatus(StudentStatus status) {
         this.status = status;
     }
-
     public String getStudentName() {
         return studentName;
     }

@@ -15,9 +15,6 @@ public class ActivityLogService {
     private ActivityLogRepository repository;
 
     public List<ActivityLog> getAllLogs() {
-
         return repository.findAllByOrderByTimestampDesc();
-
     }
-
 }

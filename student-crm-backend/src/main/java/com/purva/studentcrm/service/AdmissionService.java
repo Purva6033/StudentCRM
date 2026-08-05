@@ -14,6 +14,7 @@ import com.purva.studentcrm.entity.Student;
 import com.purva.studentcrm.entity.User;
 import com.purva.studentcrm.enums.AdmissionStatus;
 import com.purva.studentcrm.enums.Role;
+import com.purva.studentcrm.enums.StudentStatus;
 import com.purva.studentcrm.exception.ResourceNotFoundException;
 import com.purva.studentcrm.repository.AdmissionRepository;
 import com.purva.studentcrm.repository.CourseRepository;
@@ -166,7 +167,7 @@ public class AdmissionService {
         student.setAdmission(savedAdmission);
         student.setAdmissionDate(savedAdmission.getAdmissionDate());
         student.setCourse(savedAdmission.getCourse());
-        student.setStatus("ACTIVE");
+        student.setStatus(StudentStatus.ACTIVE);
 
         student = studentRepository.save(student);
 
