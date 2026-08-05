@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" width="100%">
+</p>
+
 <div align="center">
 
 # 🎓 Student CRM
@@ -195,7 +199,7 @@ StudentCRM
 ## 🔐 Login Page
 
 <p align="center">
-<img src="Screenshots/login-page.png" width="900"/>
+<img src="Screenshots/login page.png" width="900"/>
 </p>
 
 ---
@@ -203,7 +207,7 @@ StudentCRM
 ## 📊 Admin Dashboard
 
 <p align="center">
-<img src="Screenshots/admin-dashboard.png" width="900"/>
+<img src="Screenshots/Admin Dashboard.png" width="900"/>
 </p>
 
 ---
@@ -211,7 +215,7 @@ StudentCRM
 ## 👨‍🎓 Student Dashboard
 
 <p align="center">
-<img src="Screenshots/student-dashboard.png" width="900"/>
+<img src="Screenshots/Student Dashboard.png" width="900"/>
 </p>
 
 ---
@@ -219,7 +223,7 @@ StudentCRM
 ## 👨‍🏫 Counselor Dashboard
 
 <p align="center">
-<img src="Screenshots/counselor-dashboard.png" width="900"/>
+<img src="Screenshots/Counselor Dashboard.png" width="900"/>
 </p>
 
 ---
@@ -227,7 +231,7 @@ StudentCRM
 ## 🎯 Lead Management
 
 <p align="center">
-<img src="Screenshots/lead-management.png" width="900"/>
+<img src="Screenshots/Lead Management.png" width="900"/>
 </p>
 
 ---
@@ -235,7 +239,7 @@ StudentCRM
 ## 📈 Reports & Analytics
 
 <p align="center">
-<img src="Screenshots/report-analytics.png" width="900"/>
+<img src="Screenshots/Report Analytics.png" width="900"/>
 </p>
 
 ---
