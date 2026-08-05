@@ -1,0 +1,110 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+    background: #f4f7fc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Login Page */
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 20px;
+
+    background: #f4f7fc;
+
+}
+
+/* Login Card */
+
+.login-card {
+
+    width: 500px;
+
+    max-width: 95%;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+
+}
+
+/* Logo */
+
+.login-icon {
+
+    font-size: 55px;
+
+    color: #0d6efd;
+
+    margin-bottom: 10px;
+
+}
+
+/* Title */
+
+.login-title {
+
+    font-weight: bold;
+
+    color: #0d6efd;
+
+    margin-bottom: 8px;
+
+}
+
+/* Input */
+
+.form-control,
+.form-select {
+
+    height: 40px;
+
+    font-size: 14px;
+
+}
+
+/* Login Button */
+
+.login-btn {
+
+    width: 100%;
+
+    height: 48px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.login-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(13, 110, 253, .35);
+
+}
